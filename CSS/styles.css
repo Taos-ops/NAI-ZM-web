@@ -73,6 +73,7 @@ nav ul li a {
     cursor: pointer;
     padding: 10px;
     user-select: none;
+    color: black;
 }
 
 /* Hero Section */
