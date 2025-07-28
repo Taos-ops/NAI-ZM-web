@@ -17,19 +17,23 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 10px 20px;
     background-color: #E5F6DF;
     color: white;
     box-shadow: 10px 5px 30px #198a00ff;
-    flex-wrap: wrap;
+    position: relative;
+    z-index: 20;
 }
 
 .logo img {
     width: 200px;
     height: auto;
     position: relative;
-    top: 0;
-    left: 0;
+}
+
+nav {
+    position: relative;
 }
 
 nav ul {
@@ -53,13 +57,22 @@ nav ul li a {
     border-radius: 30px;
     border: none;
     width: 120px;
-    height: auto;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .donate-btn:hover {
     background-color: #157700;
     transition: background-color 0.4s;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
 }
 
 /* Hero Section */
@@ -93,11 +106,10 @@ nav ul li a {
     border-radius: 30px;
     border: none;
     width: 130px;
-    height: auto;
     font-weight: bold;
 }
 
-/* About, Get Involved, Blogs */
+/* Sections */
 .about, .get-involved, .blogs {
     padding: 40px;
     text-align: center;
@@ -114,7 +126,6 @@ nav ul li a {
     border-radius: 30px;
     border: none;
     width: 130px;
-    height: auto;
     font-weight: bold;
 }
 
@@ -132,7 +143,7 @@ nav ul li a {
     margin-bottom: 1rem;
 }
 
-/* Get Involved Section */
+/* Involvement Options */
 .involvement-options {
     display: flex;
     flex-wrap: wrap;
@@ -155,7 +166,7 @@ nav ul li a {
     margin-bottom: 1rem;
 }
 
-/* EVENTS */
+/* Events */
 .events {
     background-color: rgb(198, 251, 186);
     padding: 4rem 2rem;
@@ -218,7 +229,6 @@ nav ul li a {
     border-radius: 30px;
     border: none;
     width: 100%;
-    height: auto;
     display: inline-block;
     text-align: center;
 }
@@ -285,6 +295,19 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -296,19 +319,11 @@ footer {
         display: none;
         z-index: 10;
         padding: 1rem 0;
+        border-top: 1px solid #ccc;
     }
 
     nav ul.show {
         display: flex;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo img {
-        width: 150px;
     }
 
     .donate-btn {
